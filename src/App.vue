@@ -7,7 +7,12 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+
+// Just Import requireStoreModule function from store
 import { requireStoreModule } from "@/store";
+
+// Request for any module name by passing an argument as string(s) within an array.
+// As the function is promise-based, it's require .then() invoke in this top-level calling.
 requireStoreModule(['y','z']).then();
 
 export default {
