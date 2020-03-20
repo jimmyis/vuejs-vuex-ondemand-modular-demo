@@ -7,11 +7,18 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import { requireStoreModule } from "@/store";
+requireStoreModule(['y','z']).then();
 
 export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  mounted() {
+    // Checking if the new module was by dispatching some action within it.
+    this.$store.dispatch("y/blankAction");
+    this.$store.dispatch("z/blankAction");
   }
 }
 </script>
